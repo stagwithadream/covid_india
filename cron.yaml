@@ -1,0 +1,7 @@
+cron:
+- description: "My Background CRON job"
+  url: /my_background_job/
+  schedule: every 20 hours
+  retry_parameters:
+    min_backoff_seconds: 120
+    max_doublings: 5
