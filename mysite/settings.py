@@ -92,10 +92,10 @@ if os.getenv('GAE_APPLICATION', None):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'HOST': '/cloudsql/covidindia:europe-west2:test-instance1',
+            'HOST': '/cloudsql/covidindia:asia-south1:database-covidindia',
             'USER': 'root',
             'PASSWORD': 'lucky',
-            'NAME': 'test1',
+            'NAME': 'covid2',
         }
     }
 else:
@@ -110,7 +110,7 @@ else:
             'ENGINE': 'django.db.backends.mysql',
             'HOST': '127.0.0.1',
             'PORT': '3306',
-            'NAME': 'test1',
+            'NAME': 'covid2',
             'USER': 'root',
             'PASSWORD': 'lucky',
         }
@@ -142,7 +142,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE =  'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -156,5 +156,9 @@ SECURE_REDIRECT_EXEMPT =['my_background_job/.*']
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_ROOT = 'static'
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, os.path.join("polls","static")),
+)
