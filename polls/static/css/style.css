@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*
 0 - 600: Phone
 600 - 900: Tablet portrait
@@ -9684,7 +9684,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   float: none; }
 
 .ct-chart {
-  max-height: 300px; }
+  max-height: 8000px; }
 
 .ct-chart-overlapp {
   max-height: 370px; }
