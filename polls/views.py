@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseRedirect # noqa: 401
+from django.http import HttpResponse, HttpResponseRedirect,JsonResponse # noqa: 401
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
@@ -9,17 +9,32 @@ import json
 import csv
 from django.shortcuts import render
 
+
 from .models import count_table,state_table,place_table
 
 def index(request):
-    
+    #state_table.objects.raw('select * from (select a.* from polls_state_table a inner join (select date,state_name, max(time) time from polls_state_table group by date,state_name) b on a.state_name=b.state_name and a.date=b.date and a.time=b.time)as T where date=(select max(date) from polls_state_table) order by state_count DESC ;')
     
     return render(request, 'polls/index.html')
     
-    
-
-   
-    
+def getData(request):
+    name=[]
+    count=[]
+    delta=[]
+    for p in state_table.objects.raw('select * from (select a.* from polls_state_table a inner join (select date,state_name, max(time) time from polls_state_table group by date,state_name) b on a.state_name=b.state_name and a.date=b.date and a.time=b.time)as T where date=(select max(date) from polls_state_table) order by state_count DESC ;'):
+        if p.state_name!='Unknown':
+            name.append(p.state_name)
+            count.append(p.state_count)
+            delta.append(p.delta)
+        else:
+            unknown=p.state_count
+    state_data={
+        "label" : name,
+        "data": count,
+        "delta": delta,
+        "unknown": unknown,
+        }
+    return JsonResponse(state_data)
     
 def my_background_job(request):
     response = requests.get('https://api.covid19india.org/state_district_wise.json')

@@ -2,3 +2,4 @@ Django==2.1.14 #This requirement must remain pinned at 2.1.14 until https://gith
 PyMySQL==0.9.3
 requests
 beautifulsoup4
+djangorestframework

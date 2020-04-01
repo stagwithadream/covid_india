@@ -12,8 +12,8 @@
     <!-- Pignose Calender -->
     <link href="{%static 'plugins/pg-calendar/css/pignose.calendar.min.css' %}" rel="stylesheet">
     <!-- Chartist -->
-    <link rel="{%static 'stylesheet' %}" href="./plugins/chartist/css/chartist.min.css">
-    <link rel="{%static 'stylesheet' %}" href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <link rel="stylesheet" href="{%static  'plugins/chartist/css/chartist.min.css' %}">
+    <link rel="stylesheet" href="{%static 'plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css' %}">
     <!-- Custom Stylesheet -->
     <link href="{%static 'css/style.css' %}" rel="stylesheet">
 
@@ -649,7 +649,22 @@
 <script src="{% static 'plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js' %}"></script>
 <script src="{% static 'js/plugins-init/chartist.init.js' %}"></script>
     
-    
+<script>
+{% block jquery %}
+var endpoint ="/get_data/"
+
+$.ajax({
+	method: "GET",
+	url: endpoint,
+	success: function(state_data){
+		console.log(state_data)
+	}
+})
+{% endblock %}
+</script>
+
+
+
 
 </body>
 
