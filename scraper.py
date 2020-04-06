@@ -15,6 +15,20 @@ data = json.loads(str(soup))
 
 
 
+
+
+res3 = requests.get("https://www.worldometers.info/coronavirus/")
+soup3=BeautifulSoup(res3.text,'html.parser')
+    
+rowstmp = soup3.find('tr', attrs={'class': 'total_row'}).findAll('td')
+
+world_count_delta=rowstmp[2].get_text().replace("+","").replace(",","")
+world_count=rowstmp[1].get_text().replace("+","").replace(",","")
+world_death=rowstmp[3].get_text().replace("+","").replace(",","")
+world_death_delta=rowstmp[4].get_text().replace("+","").replace(",","")
+
+
+
 states=[]
 place_records=[]
 state_records=[]

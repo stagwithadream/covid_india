@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+    <title>CovidIndia Tracker </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{%static 'images/favicon.png' %}">
+    <link rel="icon" href="{% static 'logo.png' %}">
     <!-- Pignose Calender -->
     <link href="{%static 'plugins/pg-calendar/css/pignose.calendar.min.css' %}" rel="stylesheet">
     <!-- Chartist -->
@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="{%static 'plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css' %}">
     <!-- Custom Stylesheet -->
     <link href="{%static 'css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	
 
 </head>
 
@@ -41,366 +44,34 @@
     ***********************************-->
     <div id="main-wrapper">
 
-        <!--**********************************
-            Nav header start
-        ***********************************-->
-        <div class="nav-header">
-            <div class="brand-logo">
-                <a href="index.html">
-                    <b class="logo-abbr"><img src="{%static 'images/logo.png' %}" alt=""> </b>
-                    <span class="logo-compact"><img src="{%static 'images/logo-compact.png' %}" alt=""></span>
-                    <span class="brand-title">
-                        <img src="{% static 'images/logo-text.png' %}" alt="">
-                    </span>
-                </a>
-            </div>
-        </div>
-        <!--**********************************
-            Nav header end
-        ***********************************-->
+       
 
         <!--**********************************
             Header start
         ***********************************-->
-        <div class="header">    
-            <div class="header-content clearfix">
-                
-                <div class="nav-control">
-                    <div class="hamburger">
-                        <span class="toggle-icon"><i class="icon-menu"></i></span>
-                    </div>
-                </div>
-                <div class="header-left">
-                    <div class="input-group icons">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
-                        </div>
-                        <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard">
-                        <div class="drop-down animated flipInX d-md-none">
-                            <form action="#">
-                                <input type="text" class="form-control" placeholder="Search">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="header-right">
-                    <ul class="clearfix">
-                        <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
-                                <i class="mdi mdi-email-outline"></i>
-                                <span class="badge badge-pill gradient-1">3</span>
-                            </a>
-                            <div class="drop-down animated fadeIn dropdown-menu">
-                                <div class="dropdown-content-heading d-flex justify-content-between">
-                                    <span class="">3 New Messages</span>  
-                                    <a href="javascript:void()" class="d-inline-block">
-                                        <span class="badge badge-pill gradient-1">3</span>
-                                    </a>
-                                </div>
-                                <div class="dropdown-content-body">
-                                    <ul>
-                                        <li class="notification-unread">
-                                            <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="{% static 'images/avatar/1.jpg' %}" alt="">
-                                                <div class="notification-content">
-                                                    <div class="notification-heading">Saiful Islam</div>
-                                                    <div class="notification-timestamp">08 Hours ago</div>
-                                                    <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="notification-unread">
-                                            <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="{% static 'images/avatar/2.jpg' %}" alt="">
-                                                <div class="notification-content">
-                                                    <div class="notification-heading">Adam Smith</div>
-                                                    <div class="notification-timestamp">08 Hours ago</div>
-                                                    <div class="notification-text">Can you do me a favour?</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="{% static 'images/avatar/3.jpg' %}" alt="">
-                                                <div class="notification-content">
-                                                    <div class="notification-heading">Barak Obama</div>
-                                                    <div class="notification-timestamp">08 Hours ago</div>
-                                                    <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="{% static 'images/avatar/4.jpg' %}" alt="">
-                                                <div class="notification-content">
-                                                    <div class="notification-heading">Hilari Clinton</div>
-                                                    <div class="notification-timestamp">08 Hours ago</div>
-                                                    <div class="notification-text">Hello</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    
-                                </div>
-                            </div>
-                        </li>
-                        <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
-                                <i class="mdi mdi-bell-outline"></i>
-                                <span class="badge badge-pill gradient-2">3</span>
-                            </a>
-                            <div class="drop-down animated fadeIn dropdown-menu dropdown-notfication">
-                                <div class="dropdown-content-heading d-flex justify-content-between">
-                                    <span class="">2 New Notifications</span>  
-                                    <a href="javascript:void()" class="d-inline-block">
-                                        <span class="badge badge-pill gradient-2">5</span>
-                                    </a>
-                                </div>
-                                <div class="dropdown-content-body">
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void()">
-                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i class="icon-present"></i></span>
-                                                <div class="notification-content">
-                                                    <h6 class="notification-heading">Events near you</h6>
-                                                    <span class="notification-text">Within next 5 days</span> 
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void()">
-                                                <span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="icon-present"></i></span>
-                                                <div class="notification-content">
-                                                    <h6 class="notification-heading">Event Started</h6>
-                                                    <span class="notification-text">One hour ago</span> 
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void()">
-                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i class="icon-present"></i></span>
-                                                <div class="notification-content">
-                                                    <h6 class="notification-heading">Event Ended Successfully</h6>
-                                                    <span class="notification-text">One hour ago</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void()">
-                                                <span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="icon-present"></i></span>
-                                                <div class="notification-content">
-                                                    <h6 class="notification-heading">Events to Join</h6>
-                                                    <span class="notification-text">After two days</span> 
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    
-                                </div>
-                            </div>
-                        </li>
-                        <li class="icons dropdown d-none d-md-flex">
-                            <a href="javascript:void(0)" class="log-user"  data-toggle="dropdown">
-                                <span>English</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
-                            </a>
-                            <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
-                                <div class="dropdown-content-body">
-                                    <ul>
-                                        <li><a href="javascript:void()">English</a></li>
-                                        <li><a href="javascript:void()">Dutch</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="icons dropdown">
-                            <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
-                                <span class="activity active"></span>
-                                <img src="{% static 'images/user/1.png' %}" height="40" width="40" alt="">
-                            </div>
-                            <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
-                                <div class="dropdown-content-body">
-                                    <ul>
-                                        <li>
-                                            <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void()">
-                                                <i class="icon-envelope-open"></i> <span>Inbox</span> <div class="badge gradient-3 badge-pill gradient-1">3</div>
-                                            </a>
-                                        </li>
-                                        
-                                        <hr class="my-2">
-                                        <li>
-                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
-                                        </li>
-                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <header class="header-basic-light">
+
+          <div class="header-limiter">
+        
+            <h1><a href="#"><span ><img  id="logoda" src="{% static 'logo.png' %}"  ></span></a></h1>
+        
+            <nav style="margin-bottom: -5px;" >
+              <a href="#" class="selected" style="border-radius: 3px; background-color: #5a83ff;">Home</a>
+              <a href="#statewise" >StateWise</a>
+              <!-- <a href="#">Sources</a> -->
+              
+              <a href="/create_post/">Contact</a>
+              <a href="" ></a><span class="badge badge-success" id="last-modified">Last-Modified:</span> </a>
+              
+            </nav>
+          </div>
+        
+        </header>
         <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
 
-        <!--**********************************
-            Sidebar start
-        ***********************************-->
-        <div class="nk-sidebar">           
-            <div class="nk-nav-scroll">
-                <ul class="metismenu" id="menu">
-                    <li class="nav-label">Dashboard</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./index.html">Home 1</a></li>
-                            <!-- <li><a href="./index-2.html">Home 2</a></li> -->
-                        </ul>
-                    </li>
-                    <li class="mega-menu mega-menu-sm">
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Layouts</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./layout-blank.html">Blank</a></li>
-                            <li><a href="./layout-one-column.html">One Column</a></li>
-                            <li><a href="./layout-two-column.html">Two column</a></li>
-                            <li><a href="./layout-compact-nav.html">Compact Nav</a></li>
-                            <li><a href="./layout-vertical.html">Vertical</a></li>
-                            <li><a href="./layout-horizontal.html">Horizontal</a></li>
-                            <li><a href="./layout-boxed.html">Boxed</a></li>
-                            <li><a href="./layout-wide.html">Wide</a></li>
-                            
-                            
-                            <li><a href="./layout-fixed-header.html">Fixed Header</a></li>
-                            <li><a href="layout-fixed-sidebar.html">Fixed Sidebar</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-label">Apps</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-envelope menu-icon"></i> <span class="nav-text">Email</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./email-inbox.html">Inbox</a></li>
-                            <li><a href="./email-read.html">Read</a></li>
-                            <li><a href="./email-compose.html">Compose</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Apps</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./app-profile.html">Profile</a></li>
-                            <li><a href="./app-calender.html">Calender</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-graph menu-icon"></i> <span class="nav-text">Charts</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./chart-flot.html">Flot</a></li>
-                            <li><a href="./chart-morris.html">Morris</a></li>
-                            <li><a href="./chart-chartjs.html">Chartjs</a></li>
-                            <li><a href="./chart-chartist.html">Chartist</a></li>
-                            <li><a href="./chart-sparkline.html">Sparkline</a></li>
-                            <li><a href="./chart-peity.html">Peity</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-label">UI Components</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-grid menu-icon"></i><span class="nav-text">UI Components</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./ui-accordion.html">Accordion</a></li>
-                            <li><a href="./ui-alert.html">Alert</a></li>
-                            <li><a href="./ui-badge.html">Badge</a></li>
-                            <li><a href="./ui-button.html">Button</a></li>
-                            <li><a href="./ui-button-group.html">Button Group</a></li>
-                            <li><a href="./ui-cards.html">Cards</a></li>
-                            <li><a href="./ui-carousel.html">Carousel</a></li>
-                            <li><a href="./ui-dropdown.html">Dropdown</a></li>
-                            <li><a href="./ui-list-group.html">List Group</a></li>
-                            <li><a href="./ui-media-object.html">Media Object</a></li>
-                            <li><a href="./ui-modal.html">Modal</a></li>
-                            <li><a href="./ui-pagination.html">Pagination</a></li>
-                            <li><a href="./ui-popover.html">Popover</a></li>
-                            <li><a href="./ui-progressbar.html">Progressbar</a></li>
-                            <li><a href="./ui-tab.html">Tab</a></li>
-                            <li><a href="./ui-typography.html">Typography</a></li>
-                        <!-- </ul>
-                    </li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-layers menu-icon"></i><span class="nav-text">Components</span>
-                        </a>
-                        <ul aria-expanded="false"> -->
-                            <li><a href="./uc-nestedable.html">Nestedable</a></li>
-                            <li><a href="./uc-noui-slider.html">Noui Slider</a></li>
-                            <li><a href="./uc-sweetalert.html">Sweet Alert</a></li>
-                            <li><a href="./uc-toastr.html">Toastr</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="widgets.html" aria-expanded="false">
-                            <i class="icon-badge menu-icon"></i><span class="nav-text">Widget</span>
-                        </a>
-                    </li>
-                    <li class="nav-label">Forms</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-note menu-icon"></i><span class="nav-text">Forms</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./form-basic.html">Basic Form</a></li>
-                            <li><a href="./form-validation.html">Form Validation</a></li>
-                            <li><a href="./form-step.html">Step Form</a></li>
-                            <li><a href="./form-editor.html">Editor</a></li>
-                            <li><a href="./form-picker.html">Picker</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-label">Table</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-menu menu-icon"></i><span class="nav-text">Table</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./table-basic.html" aria-expanded="false">Basic Table</a></li>
-                            <li><a href="./table-datatable.html" aria-expanded="false">Data Table</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-label">Pages</li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Pages</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="./page-login.html">Login</a></li>
-                            <li><a href="./page-register.html">Register</a></li>
-                            <li><a href="./page-lock.html">Lock Screen</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="./page-error-404.html">Error 404</a></li>
-                                    <li><a href="./page-error-403.html">Error 403</a></li>
-                                    <li><a href="./page-error-400.html">Error 400</a></li>
-                                    <li><a href="./page-error-500.html">Error 500</a></li>
-                                    <li><a href="./page-error-503.html">Error 503</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!--**********************************
-            Sidebar end
-        ***********************************-->
+       
 
         <!--**********************************
             Content body start
@@ -408,77 +79,203 @@
         <div class="content-body">
 
             <div class="container-fluid mt-3">
-                <div class="row-initial">
-                    <div class="col-lg-3 col-sm-6 col">
-                        <div class="card gradient-1">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Confirmed</h3>
+			
+				<div class="row">
+                    <div class="col-lg-6 col-sm-6 col">
+                        <div class="card gradient-4">
+                            <div class="card-body-world">
+                                <h3 class="card-title  text-white"><span class = "full-text"> Confirmed </span> <span class = "short-text"> Confm </span> <span class="display-add opacity-5"> World </span></h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">4565</h2>
-<!--                                    <p class="text-white mb-0">Jan - March 2019</p>-->
+                                    <h2 class="text-white" id="today-confirmed-world"></h2>
+                               
                                 </div>
 <!--                                <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>-->
+                                <br class="mobile-br">
+                                  <p class="float-right-mobile text-white display-add-mobile opacity-5" id="today-confirmed-world-delta">+ </i></p>
+
+                                
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 col">
-                        <div class="card gradient-2">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Active</h3>
+                    <div class="col-lg-6 col-sm-6 col">
+                        <div class="card gradient-10">
+                            <div class="card-body-world">
+                                <h3 class="card-title text-white">Deaths<span class=" display-add opacity-5">&nbsp; World </span></h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white"> 8541</h2>
-<!--                                    <p class="text-white mb-0">Jan - March 2019</p>-->
+                                    <h2 class="text-white" id="today-deaths-world"></h2>
+                                 
                                 </div>
-<!--                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>-->
+                                <br class="mobile-br">
+                              	<p class="float-right-mobile display-add-mobile opacity-5 text-white" id="today-deaths-world-delta">+ </i></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+
+
+
+                <!-- ########################################################################### -->
+                <div class="desktop">
+
+                
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6 col">
+                        <div class="card gradient-4">
+                            <div class="card-body-india">
+                                <h3 class="card-title-india text-white"> <span class = "full-text"> Confirmed </span> <span class = "short-text"> Confm </span> <span class="display-add opacity-5"> &nbsp; India </span></h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white" id="today-confirmed"></h2>
+                               
+                                </div>
+<!--                                <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>-->
+									<p class="float-right text-white display-add opacity-5" id="today-confirmed-delta">+ </i></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 col">
                         <div class="card gradient-3">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Recovered</h3>
+                            <div class="card-body-india">
+                                <h3 class="card-title-india text-white">Active<span class="display-add opacity-5"> &nbsp; India </span></h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">4565</h2>
-<!--                                    <p class="text-white mb-0">Jan - March 2019</p>-->
+                                    <h2 class="text-white" id="today-active"></h2>
+                                
                                 </div>
-<!--                                <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>-->
+<!--                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>-->
+                        <p class="float-right display-add opacity-5 text-white" id="today-active-delta">+ </i></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 col">
-                        <div class="card gradient-4">
-                            <div class="card-body">
-                                <h3 class="card-title text-white">Deaths</h3>
+                        <div class="card gradient-11">
+                            <div class="card-body-india">
+                                <h3 class="card-title-india text-white"><span class = "full-text"> Recovered </span> <span class = "short-text"> Recvrd </span><span class="display-add opacity-5"> &nbsp; India </span></h3>
                                 <div class="d-inline-block">
-                                    <h2 class="text-white">99</h2>
-<!--                                    <p class="text-white mb-0">Jan - March 2019</p>-->
+                                    <h2 class="text-white" id="today-recovered"></h2>
+                                
+                                </div>
+<!--                                <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>-->
+                              <p class="float-right display-add opacity-5 text-white" id="today-recovered-delta">+ </i></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col">
+                        <div class="card gradient-10">
+                            <div class="card-body-india">
+                                <h3 class="card-title-india text-white">Deaths<span class="display-add opacity-5">&nbsp;  India </span></h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white" id="today-deaths"></h2>
+                                  
                                 </div>
 <!--                                <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>-->
+                                <p class="float-right display-add opacity-5 text-white" id="today-deaths-delta">+ </i></p>
                             </div>
                         </div>
                     </div>
                 </div>
+                </div>
+
+                <div class="mobile">
+
+                
+                  <div class="row">
+                      <div class="col-lg-3 col-sm-6 col">
+                          <div class="card gradient-4">
+                              <div class="card-body-india">
+                                  <h3 class="card-title-india text-white"> <span class = "full-text"> Confirmed </span> <span class = "short-text"> Confm </span> <span class="display-add opacity-5"> &nbsp; India </span></h3>
+                                  <div class="d-inline-block">
+                                      <h2 class="text-white" id="today-confirmed-mobile"></h2>
+                                 
+                                  </div>
+  <!--                                <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>-->
+                    <p class="float-right text-white display-add opacity-5" id="today-confirmed-delta-mobile">+ </i></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-3 col-sm-6 col">
+                          <div class="card gradient-3">
+                              <div class="card-body-india">
+                                  <h3 class="card-title-india text-white">Active<span class="display-add opacity-5"> &nbsp; India </span></h3>
+                                  <div class="d-inline-block">
+                                      <h2 class="text-white" id="today-active-mobile"></h2>
+                                  
+                                  </div>
+  <!--                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>-->
+                          <p class="float-right display-add opacity-5 text-white" id="today-active-delta-mobile">+ </i></p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+
+                  
+                      <div class="col-lg-3 col-sm-6 col">
+                          <div class="card gradient-11">
+                              <div class="card-body-india">
+                                  <h3 class="card-title-india text-white"><span class = "full-text"> Recovered </span> <span class = "short-text"> Recvrd </span><span class="display-add opacity-5"> &nbsp; India </span></h3>
+                                  <div class="d-inline-block">
+                                      <h2 class="text-white" id="today-recovered-mobile"></h2>
+                                  
+                                  </div>
+  <!--                                <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>-->
+                                <p class="float-right display-add opacity-5 text-white" id="today-recovered-delta-mobile">+ </i></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-3 col-sm-6 col">
+                          <div class="card gradient-10">
+                              <div class="card-body-india">
+                                  <h3 class="card-title-india text-white">Deaths<span class="display-add opacity-5">&nbsp;  India </span></h3>
+                                  <div class="d-inline-block">
+                                      <h2 class="text-white" id="today-deaths-mobile"></h2>
+                                    
+                                  </div>
+  <!--                                <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>-->
+                                  <p class="float-right display-add opacity-5 text-white" id="today-deaths-delta-mobile">+ </i></p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+                  
+
+
+                
+
+
+<!-- ####################################################################################### -->
+
+
+
+                
 
                 <div class="row">
                     
                        <div class="col-lg-6">
                         <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Active Vs Recovered interpolation</h4>
+                            <div class="card-body-mine">
+                                <h4 class="card-title"> &nbsp; Covid-19 Time-series</h4>
                                 <div id="line-smoothing" class="ct-chart ct-golden-section"></div>
                             </div>
-                             <div class="card-body">
+                             <div class="card-body-2">
                                         <div class="d-flex justify-content-between">
                                             <div class="w-100 mr-2">
-                                                <h6>Pixel 2</h6>
-                                                <div class="progress" style="height: 6px">
-                                                    <div class="progress-bar bg-danger" style="width: 40%"></div>
+                                                <h7>Confirmed</h7>
+                                                <div class="progress" style="height: 4px">
+                                                    <div class="progress-bar bg-primary " style="width: 100%"></div>
                                                 </div>
                                             </div>
                                             <div class="ml-2 w-100">
-                                                <h6>iPhone X</h6>
-                                                <div class="progress" style="height: 6px">
-                                                    <div class="progress-bar bg-primary" style="width: 80%"></div>
+                                                <h7>Recovered</h7>
+                                                <div class="progress" style="height: 4px">
+                                                    <div class="progress-bar bg-success" style="width: 100%"></div>
+                                                </div>
+                                            </div>
+											<div class="ml-2 w-100">
+                                                <h7 text-center>Deaths</h7>
+                                                <div class="progress" style="height: 4px">
+                                                    <div class="progress-bar bg-danger" style="width: 100%"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -487,10 +284,27 @@
                     </div>
                      <div class="col-lg-6">
                         <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Active Vs Recovered bar</h4>
-                                <div id="overlapping-bars" class="ct-chart-overlapp ct-golden-section"></div>
+                            <div class="card-body-mine">
+                                <h4 class="card-title">&nbsp; Covid-19 Stacked Time-series</h4>
+                                <div id="stacked-bar-chart" class="ct-chart-overlapp ct-golden-section"></div>
                             </div>
+							                      <div class="card-body-2">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="w-100 mr-2">
+                                                <h7>Confirmed Today</h7>
+                                                <div class="progress" style="height: 4px">
+                                                    <div class="progress-bar bg-danger" style="width: 100%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="ml-2 w-100">
+                                                <h7>Total Confirmed</h7>
+                                                <div class="progress" style="height: 4px">
+                                                    <div class="progress-bar bg-primary" style="width: 100%"></div>
+                                                </div>
+                                            </div>
+											
+                                        </div>
+                                    </div>
                         </div>
                     </div>
                     
@@ -504,70 +318,31 @@
 
                 <div class="row">
                          <div class="col-lg-6">
-                        <div class="card">
+                        <div class="card" id="statewise">
                             <div class="card-body">
-                                <h4 class="card-title">StateWise</h4>
-                                <div id="horizontal-bar-chart" class="ct-chart ct-golden-section"></div>
+                                <h4 class="card-title">States/UT vs Confirmed Cases</h4>
+                                <div id="horizontal-bar-chart" class="ct-chart ct-golden-section" style="height:900px"></div>
                             </div>
                         </div>
                     </div>  
                         <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Responsive Table</h4>
-                                <div class="table-responsive">
-                                    <table class="table header-border">
+                                <h4 class="card-title">State Wise Information</h4>
+                                <div class="table-responsive" style="height:900px">
+                                    <table class="table header-border table-hover verticle-middle" >
                                         <thead>
                                             <tr>
-                                                <th>State(or)UT</th>
-                                                <th>Confirmed</th>
-                                                <th>Active</th>
-                                                <th>Recovered</th>
+                                                <th>State / UT</th>
+                                                <th style="text-align: center;">Total Confirmed</th>
+												<th style="text-align: center;">Today Confirmed </th>
                                                 
-                                                <th>Deaths</th>
+                                                
+                                                
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><a href="javascript:void(0)">Order #26589</a>
-                                                </td>
-                                                <td>Herman Beck</td>
-                                                <td><span class="text-muted">Oct 16, 2017</span>
-                                                </td>
-                                                <td>$45.00</td>
-                                                
-                                                <td>EN</td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="javascript:void(0)">Order #58746</a>
-                                                </td>
-                                                <td>Mary Adams</td>
-                                                <td><span class="text-muted">Oct 12, 2017</span>
-                                                </td>
-                                                <td>$245.30</td>
-                                                
-                                                <td>CN</td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="javascript:void(0)">Order #98458</a>
-                                                </td>
-                                                <td>Caleb Richards</td>
-                                                <td><span class="text-muted">May 18, 2017</span>
-                                                </td>
-                                                <td>$38.00</td>
-                                                
-                                                <td>AU</td>
-                                            </tr>
-                                            <tr>
-                                                <td><a href="javascript:void(0)">Order #32658</a>
-                                                </td>
-                                                <td>June Lane</td>
-                                                <td><span class="text-muted">Apr 28, 2017</span>
-                                                </td>
-                                                <td>$77.99</td>
-                                                
-                                                <td>FR</td>
-                                            </tr>
+                                        <tbody id="resp_table">
+                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -599,7 +374,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright &copy; Designed & Developed by <a href="#">Manu</a> 2020</p>
+                <p>Copyright &copy; Designed & Developed by <a href="https://github.com/stagwithadream">Manu</a> 2020</p>
             </div>
         </div>
         <!--**********************************
@@ -652,18 +427,398 @@
 <script>
 {% block jquery %}
 var endpoint ="/get_data/"
-var data = []
-var label =[]
+
 $.ajax({
 	method: "GET",
 	url: endpoint,
 	success: function(state_data){
+		
 		label =state_data.label
 		data=state_data.data
-		setChart()
-		  
+		delta=state_data.delta
+		unknown=state_data.unknown
+		
+		total_count=state_data.total_count
+		total_active=state_data.total_active
+		total_deaths=state_data.total_deaths
+		total_recovered=state_data.total_recovered
+		total_delta=state_data.total_delta
+		date=state_data.date
+		time=state_data.time
+		
+		today_confirmed=state_data.today_confirmed
+		today_deaths=state_data.today_deaths
+		today_active=state_data.today_active
+		today_recovered=state_data.today_recovered
+		today_delta=state_data.today_delta
+		
+    today_world_count=state_data.today_world_count,
+    today_world_deaths=state_data.today_world_deaths,
+    today_world_count_delta=state_data.today_world_count_delta,
+    today_world_deaths_delta=state_data.today_world_deaths_delta,
+
+    
+
+    yestar_confirmed=state_data.yestar_confirmed,
+    yestar_recovered=state_data.yestar_recovered,
+    yestar_deaths=state_data.yestar_deaths,
+    yestar_delta=state_data.yestar_delta,
+    yestar_active=state_data.yestar_active,
+
+    yestar_world_count=state_data.yestar_world_count,
+    yestar_world_deaths=state_data.yestar_world_deaths,
+    yestar_world_count_delta=state_data.yestar_world_count_delta,
+    yestar_world_deaths_delta=state_data.yestar_world_deaths_delta,
+		
+    today_confirmed_delta=state_data.today_confirmed-state_data.yestar_confirmed
+    today_active_delta=state_data.today_active-state_data.yestar_active 
+    
+    last_modified=state_data.today_time
+    today_recovered_delta=state_data.today_recovered-state_data.yestar_recovered
+    today_deaths_delta=state_data.today_deaths-state_data.yestar_deaths
+    today_world_count=state_data.today_world_count
+    today_world_deaths=state_data.today_world_deaths
+    today_world_count_delta=state_data.today_world_count-state_data.yestar_world_count
+    today_world_deaths_delta=state_data.today_world_deaths-state_data.yestar_world_deaths
+	
+
+		setInfo()
+    setAnime()
+		setStateChart()
+		setStateTable()
+		setCountBar()
+		setCountChart()
+    tooltipcustom()
 	}
 })
+
+
+function tooltipcustom(){
+
+
+  var $tooltip = $('<div class="tooltip tooltip-hidden"></div>').appendTo($('.ct-chart'));
+
+$(document).on('mouseenter', '.ct-point', function() {
+  var seriesName = 'test',
+      value = $(this).attr('ct:value');
+
+  $tooltip.text(seriesName + ': ' + value);
+  $tooltip.removeClass('tooltip-hidden');
+});
+
+$(document).on('mouseleave', '.ct-point', function() {
+  $tooltip.addClass('tooltip-hidden');
+});
+
+$(document).on('mousemove', '.ct-point', function(event) {
+  $tooltip.css({
+    left: event.offsetX - $tooltip.width() / 2,
+    top: event.offsetY - $tooltip.height() - 20
+  });
+});
+
+}
+
+
+function setInfo(){
+
+
+$('#today-confirmed').append(today_confirmed);
+
+$('#today-active').append(today_active);
+$('#today-deaths').append(today_deaths);
+$('#today-recovered').append(today_recovered);
+
+$('#today-confirmed-delta').append(today_confirmed_delta);
+$('#today-active-delta').append(today_active_delta);
+$('#today-deaths-delta').append(today_deaths_delta);
+$('#today-recovered-delta').append(today_recovered_delta);
+
+$('#today-confirmed-mobile').append(today_confirmed);
+$('#today-active-mobile').append(today_active);
+$('#today-deaths-mobile').append(today_deaths);
+$('#today-recovered-mobile').append(today_recovered);
+
+$('#today-confirmed-delta-mobile').append(today_confirmed_delta);
+$('#today-active-delta-mobile').append(today_active_delta);
+$('#today-deaths-delta-mobile').append(today_deaths_delta);
+$('#today-recovered-delta-mobile').append(today_recovered_delta);
+
+
+$('#today-confirmed-world').append(today_world_count);
+$('#today-confirmed-world-delta').append(today_world_count_delta);
+$('#today-deaths-world-delta').append(today_world_deaths_delta);
+$('#today-deaths-world').append(today_world_deaths);
+$('#last-modified').append(last_modified);
+
+
+}
+
+function setAnime(){
+
+
+
+  $('#today-confirmed').each(function () {
+    $(this).prop('Counter',yestar_confirmed).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 3000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now).toLocaleString('en-IN'));
+        }
+    });
+});
+$('#today-confirmed-mobile').each(function () {
+    $(this).prop('Counter',yestar_confirmed).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 3000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now).toLocaleString('en-IN'));
+        }
+    });
+});
+
+
+$('#today-confirmed-world').each(function () {
+    $(this).prop('Counter',yestar_world_count).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 3000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now).toLocaleString('en-IN'));
+        }
+    });
+});
+
+$('#today-active').each(function () {
+    $(this).prop('Counter',yestar_active).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 3000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now).toLocaleString('en-IN'));
+        }
+    });
+});
+
+$('#today-active-mobile').each(function () {
+    $(this).prop('Counter',yestar_active).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 3000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now).toLocaleString('en-IN'));
+        }
+    });
+});
+
+$('#today-deaths').each(function () {
+    $(this).prop('Counter',yestar_deaths).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 3000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now).toLocaleString('en-IN'));
+        }
+    });
+});
+
+$('#today-deaths-mobile').each(function () {
+    $(this).prop('Counter',yestar_deaths).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 3000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now).toLocaleString('en-IN'));
+        }
+    });
+});
+
+$('#today-recovered').each(function () {
+    $(this).prop('Counter',yestar_recovered).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 3000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now).toLocaleString('en-IN'));
+        }
+    });
+});
+
+$('#today-recovered-mobile').each(function () {
+    $(this).prop('Counter',yestar_recovered).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 3000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now).toLocaleString('en-IN'));
+        }
+    });
+});
+
+$('#today-deaths-world').each(function () {
+    $(this).prop('Counter',yestar_world_deaths).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 3000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now).toLocaleString('en-IN'));
+        }
+    });
+});
+}
+
+
+
+function setStateTable(){
+
+var trHTML = '';
+
+$.each(label, function (i, item) {
+	
+	trHTML += '<tr><td>' + label[i] + '</td><td style="text-align:center;">' + data[i] + '</td><td style="text-align:center;"> <span class="badge badge-danger px-2">+ '+ delta[i]+'</span></td></tr>';
+});
+
+$('#resp_table').append(trHTML);
+
+}
+
+
+function setStateChart(){
+
+//Horizontal bar chart
+
+new Chartist.Bar('#horizontal-bar-chart', {
+labels: label,
+series: [data]
+}, {
+seriesBarDistance: 10,
+reverseData: true,
+horizontalBars: true,
+axisX: {
+  // On the x-axis start means top and end means bottom
+  position: 'start'
+},
+chartPadding:{
+right:25},
+axisY: {
+showGrid:false,
+  offset: 80
+},
+plugins: [
+  Chartist.plugins.tooltip()
+  
+]
+}).on('draw', function(data) {
+if(data.type === 'bar') {
+  data.element.attr({
+	style: 'stroke-width: 20px'
+  });
+}
+});
+
+}
+
+function setCountBar(){
+
+
+
+//Stacked bar chart
+
+new Chartist.Bar('#stacked-bar-chart', {
+labels: date,
+series: [
+  total_count,
+  total_delta
+]
+}, {
+stackBars: true,
+
+axisX: {showGrid:false},
+chartPadding:{
+bottom:25},
+plugins: [
+  Chartist.plugins.tooltip()
+]
+}).on('draw', function(data) {
+if(data.type === 'bar') {
+  data.element.attr({
+	style: ''
+  });
+}
+});
+
+
+}
+
+
+function setCountChart(){
+
+//Line Interpolation / Smoothing
+
+var chart = new Chartist.Line('#line-smoothing', {
+labels: date,
+series: [
+  total_count,
+  total_deaths,
+  total_recovered
+]
+}, {
+// Remove this configuration to see that chart rendered with cardinal spline interpolation
+// Sometimes, on large jumps in data values, it's better to use simple smoothing.
+
+fullWidth: true,
+chartPadding:{
+bottom:25},
+low: 0,
+plugins: [
+  Chartist.plugins.tooltip()
+]
+});
+
+
+}
+
+
+var databar = {
+labels: date,
+series: [
+  total_recovered,
+  total_active,
+  total_deaths,
+  total_recovered
+]
+};
+
+var options = {
+seriesBarDistance: 10
+};
+
+var responsiveOptions = [
+['screen and (max-width: 640px)', {
+  seriesBarDistance: 5,
+  axisX: {
+	labelInterpolationFnc: function (value) {
+	  return value[0];
+	}
+  }
+}]
+];
+
+new Chartist.Bar('#overlapping-bars', databar, options, responsiveOptions);
+
+
 
 
 var chart = new Chartist.Line('#smil-animations', {
@@ -1047,30 +1202,7 @@ new Chartist.Bar('#bi-polar-bar', data, options);
 
 //Overlapping bars on mobile
 
-var data = {
-labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-series: [
-  [5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8],
-  [3, 2, 9, 5, 4, 6, 4, 6, 7, 8, 7, 4]
-]
-};
 
-var options = {
-seriesBarDistance: 10
-};
-
-var responsiveOptions = [
-['screen and (max-width: 640px)', {
-  seriesBarDistance: 5,
-  axisX: {
-	labelInterpolationFnc: function (value) {
-	  return value[0];
-	}
-  }
-}]
-];
-
-new Chartist.Bar('#overlapping-bars', data, options, responsiveOptions);
 
 
 
@@ -1105,56 +1237,7 @@ plugins: [
 
 
 
-//Stacked bar chart
 
-new Chartist.Bar('#stacked-bar-chart', {
-labels: ['Q1', 'Q2', 'Q3', 'Q4'],
-series: [
-  [800000, 1200000, 1400000, 1300000],
-  [200000, 400000, 500000, 300000],
-  [160000, 290000, 410000, 600000]
-]
-}, {
-stackBars: true,
-axisY: {
-  labelInterpolationFnc: function(value) {
-	return (value / 1000) + 'k';
-  }
-},
-plugins: [
-  Chartist.plugins.tooltip()
-]
-}).on('draw', function(data) {
-if(data.type === 'bar') {
-  data.element.attr({
-	style: 'stroke-width: 30px'
-  });
-}
-});
-
-
-
-
-function setChart(){
-
-//Horizontal bar chart
-
-new Chartist.Bar('#horizontal-bar-chart', {
-labels: label,
-series: data
-}, {
-seriesBarDistance: 10,
-reverseData: true,
-horizontalBars: true,
-axisY: {
-  offset: 70
-},
-plugins: [
-  Chartist.plugins.tooltip()
-]
-});
-
-}
 
 
 

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<title>Covid India </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	<link href="{%static 'css/style.css' %}" rel="stylesheet">
+	<link href="{%static 'plugins/pg-calendar/css/pignose.calendar.min.css' %}" rel="stylesheet">
+<!--===============================================================================================-->
+</head>
+
+
+
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <header class="header-basic-light">
+
+			<div class="header-limiter">
+		  
+			  <h1><a href="#"><span><img id="logoda" src="{% static 'logo.png' %}"  ></span></a></h1>
+		  
+			  <nav style="margin-bottom: -5px;" >
+				<a href="/index/"   >Home</a>
+				
+				<!-- <a href="#">Sources</a> -->
+				
+				<a href="#" class="selected" style="border-radius: 3px; background-color: #5a83ff;" >Contact</a>
+			
+				
+			  </nav>
+			</div>
+		  
+		  </header>
+
+
+	<div class="container-contact100">
+		
+
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" id="post-form" method="POST">
+				{% csrf_token %}
+				<span class="contact100-form-title">
+					Contact Us
+					<br><p> Incase of any queries, suggestions or collaborations</p>
+				</span>
+				
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<input class="input100" type="text" name="name" placeholder="Full Name" id="name">
+					<span class="focus-input100-1"></span>
+					<span class="focus-input100-2"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<input class="input100" type="text" name="email" placeholder="Email" id="email">
+					<span class="focus-input100-1"></span>
+					<span class="focus-input100-2"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Message is required">
+					<textarea class="input100" name="qtext" placeholder="Your Message" id ="qtext"></textarea>
+					<span class="focus-input100-1"></span>
+					<span class="focus-input100-2"></span>
+				</div>
+
+				
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn">
+						Submitted
+					</button><p id="status"></p>
+				</div>
+			</form>
+		</div>
+	</div>
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; Designed & Developed by <a href="https://github.com/stagwithadream">Manu</a> 2020</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+<script>
+{% block jquery %}
+var endpoint2 ="/create_post/"
+$(document).on('submit', '#post-form',function(e){
+    $.ajax({
+        type:'POST',
+        url:endpoint2,
+        data:{
+            name:$('#name').val(),
+            email:$('#email').val(),
+			qtext:$('#qtext').val(),
+            csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+            action: 'post'
+        },
+        success:function(){
+            
+            $("#status").append('Form Submitted');
+        }
+    
+    
+    });
+});
+
+{% endblock %}
+
+</script>
+
+<script src="{% static 'plugins/common/common.min.js' %}"></script>
+	
+    <script src= "{% static 'js/custom.min.js' %}"></script>
+    <script src= "{% static 'js/settings.js' %}"></script>
+    <script src= "{% static 'js/gleek.js' %}"></script>
+	<script src= "{% static 'js/styleSwitcher.js' %}"></script>
+	<script src="{%static 'plugins/circle-progress/circle-progress.min.js' %}"></script>
+
+</body>
+</html>
